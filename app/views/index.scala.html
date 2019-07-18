@@ -1,0 +1,28 @@
+@(pokemonSeq: Seq[MinifiedPokemon])
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header><a href="@routes.HomeController.index"><h1>The Best Pokemon Info Searcher Page</h1></a></header>
+        <section class="content">
+            @for(pokemon <- pokemonSeq) {
+                <div class="card">
+                    <a href="@routes.HomeController.singlePage(pokemon.number.toString)">
+                        <img src="@pokemon.img" alt="@pokemon.name image"/>
+                        <h2>@pokemon.name.capitalize</h2>
+                        <ul class="info">
+                            <li><b>Number:</b> @pokemon.number</li>
+                            <li><b>Type(s):</b> @{pokemon.types.map(_.capitalize).mkString(", ")}</li>
+                        </ul>
+                    </a>
+                </div>
+            }
+        </section>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    --card-border: 2px solid black;
+    --card-background-colour: #fff6a4;
+}
+
+body {
+    background-color: #f6bd20;
+    margin: 0
+}
+
+header {
+    background-color: #de9400;
+    padding: 1em;
+    margin-bottom: 1em
+}
+
+header h1 {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+    transition: 0.15s ease-in-out;
+}
+
+header a:hover {
+    opacity: 0.5;
+}
+
+section.content {
+    max-width: 1200px;
+    margin: auto auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-column-gap: 3em;
+    grid-row-gap: 3em;
+}
+
+div.card {
+    border: var(--card-border);
+    background-color: var(--card-background-colour);
+    transition: 0.15s ease-in-out;
+}
+
+div.card:hover {
+    opacity: 0.5;
+}
+
+div.card a {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+div.card a img {
+    width: auto;
+    margin: auto;
+}
+
+div.card a h2 {
+    text-align: center;
+}
+
+ul.info {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.info li {
+    padding-bottom: 10px
+}
+
+section.content.single-page h2 {
+    grid-area: title
+}
+
+section.content.single-page .bio {
+    grid-area: bio
+}
+
+section.content.single-page .sprites {
+    grid-area: sprites
+}
+
+section.content.single-page {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "title title title"
+        "bio   bio   sprites";
+    border: var(--card-border);
+    background-color: var(--card-background-colour);
+    padding: 0 30px;
+}
+
+section.content.single-page .sprites {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
