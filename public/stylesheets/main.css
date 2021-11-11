@@ -99,6 +99,25 @@ section.content.single-page {
     padding: 0 30px;
 }
 
+@media(max-width: 500px) {
+    section.content.single-page {
+        grid-template-areas:
+            "title"
+            "bio"
+            "sprites";
+        grid-row-gap: 1em;
+    }
+
+    ul.info {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    ul.info li {
+        flex: 50%;
+    }
+}
+
 section.content.single-page .sprites {
     display: grid;
     grid-template-columns: 1fr 1fr;
